@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+template = template_0v10r6v
+publick key = FwKVzNrYUfJqB3O_k
