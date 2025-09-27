@@ -15,7 +15,7 @@ const Header = () => {
      };
 
      return (
-          <header className="bg-green-600 text-white py-4 px-6 flex justify-between items-center dark:bg-gray-800">
+          <header className="bg-green-600 fixed w-full text-white py-4 px-6 flex justify-between items-center dark:bg-gray-800">
                <Link to="/" className="text-2xl font-bold">Raita Bandhu</Link>
                <nav className="space-x-4 flex items-center">
                     {isLoggedIn ? (

@@ -34,14 +34,14 @@ const Suggestions = () => {
      return (
           <div className="flex flex-col min-h-screen">
                <Header />
-               <h2 className="text-3xl font-bold text-center mb-6 dark:text-slate-600">
+               <h2 className="text-3xl pt-20 font-bold text-center mb-6 dark:text-slate-600">
                     Share Your Suggestions
                </h2>
-               <p className="text-center mb-8 text-gray-600 dark:text-gray-800">
+               <p className="text-center mb-4 text-gray-600 dark:text-gray-800">
                     Interested to improve Raita Bandhu! Share your ideas or express interest
                     in contributing to our mission.
                </p>
-               <section className="flex-grow py-12 px-6">
+               <section className="flex-grow py-5 px-6">
                     {!isSuccess ? (
                          <form
                               ref={form}

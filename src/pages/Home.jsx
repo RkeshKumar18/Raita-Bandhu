@@ -48,7 +48,7 @@ const Home = () => {
           <div className="flex flex-col min-h-screen">
                <Header />
                {/* Direct Hero */}
-               <section className="bg-green-100 py-12 px-6 text-center dark:bg-gray-900 dark:text-white">
+               <section className="bg-green-100 pt-35 py-18 px-6 text-center dark:bg-gray-900 dark:text-white">
                     <h1 className="text-4xl font-bold mb-4">Connect Farmers Directly to Companies</h1>
                     <p className="text-xl mb-6">Eliminate middlemen, get fair prices, and reduce losses. Start now!</p>
                     <div className="space-x-4">
@@ -78,24 +78,24 @@ const Home = () => {
                </section>
 
                {/* Feasibility and Viability */}
-               <section className="py-8 px-6 bg-white">
+               {/* <section className="py-8 px-6 bg-white">
                     <h2 className="text-3xl font-bold text-center mb-6">Feasibility and Viability</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                          {viability.map((item, index) => (
                               <FeatureCard key={index} title={item.title} description={item.description} />
                          ))}
                     </div>
-               </section>
+               </section> */}
 
                {/* Challenges */}
-               <section className="py-8 px-6 bg-gray-100">
+               {/* <section className="py-8 px-6 bg-gray-100">
                     <h2 className="text-3xl font-bold text-center mb-6">Addressing Challenges</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                          {challenges.map((challenge, index) => (
                               <FeatureCard key={index} title={challenge.title} description={challenge.description} />
                          ))}
                     </div>
-               </section>
+               </section> */}
 
                {/* CTA */}
                <section className="py-8 px-6 bg-green-600 text-white text-center">
