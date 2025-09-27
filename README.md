@@ -13,3 +13,5 @@ npm install @emailjs/browser
 npm install @heroicons/react
 
 npm install framer-motion
+
+npm install dotenv

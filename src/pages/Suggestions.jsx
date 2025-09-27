@@ -7,13 +7,18 @@ import Footer from '../components/Footer';
 const Suggestions = () => {
      const form = useRef();
      const [isSuccess, setIsSuccess] = useState(false);
+     const [role, setRole] = useState("");
 
      const sendEmail = (e) => {
           e.preventDefault();
 
-          // Replace with your EmailJS credentials
-          emailjs
-               .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+          emailjs.sendForm(
+               import.meta.env.VITE_EMAILJS_SERVICE_ID,
+               import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+               form.current,
+               import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          )
+
                .then(
                     (result) => {
                          console.log(result.text);
@@ -29,14 +34,20 @@ const Suggestions = () => {
      return (
           <div className="flex flex-col min-h-screen">
                <Header />
-               <h2 className="text-3xl font-bold text-center mb-6 dark:text-slate-600">Share Your Suggestions</h2>
+               <h2 className="text-3xl font-bold text-center mb-6 dark:text-slate-600">
+                    Share Your Suggestions
+               </h2>
                <p className="text-center mb-8 text-gray-600 dark:text-gray-800">
-                    Intrested to improve Raita Bandhu! Share your ideas or express interest in contributing to our mission.
+                    Interested to improve Raita Bandhu! Share your ideas or express interest
+                    in contributing to our mission.
                </p>
                <section className="flex-grow py-12 px-6">
-
                     {!isSuccess ? (
-                         <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md dark:bg-gray-800">
+                         <form
+                              ref={form}
+                              onSubmit={sendEmail}
+                              className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md dark:bg-gray-800"
+                         >
                               <input
                                    type="text"
                                    name="user_name"
@@ -53,10 +64,12 @@ const Suggestions = () => {
                               />
                               <select
                                    name="user_role"
+                                   value={role}
+                                   onChange={(e) => setRole(e.target.value)}
                                    className="w-full mb-4 p-2 border rounded dark:bg-gray-700 dark:text-white dark:border-gray-600"
                                    required
                               >
-                                   <option value="" disabled selected>
+                                   <option value="" disabled>
                                         Select Your Role
                                    </option>
                                    <option value="Farmer">Farmer</option>
@@ -76,7 +89,9 @@ const Suggestions = () => {
                                         name="interested_in_contributing"
                                         className="mr-2 dark:bg-gray-700 dark:border-gray-600"
                                    />
-                                   <span className="text-gray-600 dark:text-gray-300">I'm interested in contributing to Raita Bandhu</span>
+                                   <span className="text-gray-600 dark:text-gray-300">
+                                        I'm interested in contributing to Raita Bandhu
+                                   </span>
                               </label>
                               <button
                                    type="submit"
@@ -102,10 +117,18 @@ const Suggestions = () => {
                                    animate={{ pathLength: 1 }}
                                    transition={{ duration: 1, ease: 'easeInOut' }}
                               >
-                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                   <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M5 13l4 4L19 7"
+                                   />
                               </motion.svg>
                               <h3 className="text-2xl font-bold mb-2">Suggestion Submitted!</h3>
-                              <p>Thank you for your feedback. If you expressed interest in contributing, we'll reach out soon!</p>
+                              <p>
+                                   Thank you for your feedback. If you expressed interest in
+                                   contributing, we'll reach out soon!
+                              </p>
                          </motion.div>
                     )}
                </section>
