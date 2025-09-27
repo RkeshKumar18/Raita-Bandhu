@@ -15,3 +15,6 @@ npm install @heroicons/react
 npm install framer-motion
 
 npm install dotenv
+
+
+[text](vscode-local:/c%3A/Users/tejas/Downloads/README.markdown)
