@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 const RegisterCompany = () => {
      const [email, setEmail] = useState('');
      const [password, setPassword] = useState('');
+     const [name, setName] = useState('')
+
      const navigate = useNavigate();
 
      const handleSubmit = (e) => {
@@ -19,9 +21,17 @@ const RegisterCompany = () => {
      return (
           <div className="flex flex-col min-h-screen">
                <Header />
-               <section className="flex-grow py-12 px-6">
+               <section className="flex-grow pt-30 py-12 px-6">
                     <h2 className="text-3xl font-bold text-center mb-6">Register as Company</h2>
                     <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+                         <input
+                              type="name"
+                              placeholder="Name"
+                              value={name}
+                              onChange={(e) => setName(e.target.value)}
+                              className="w-full mb-4 p-2 border rounded"
+                              required
+                         />
                          <input
                               type="email"
                               placeholder="Email"
