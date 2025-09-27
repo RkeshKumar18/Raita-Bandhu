@@ -13,7 +13,8 @@ const Dashboard = () => {
                     <h2 className="text-3xl font-bold mb-4">Welcome to Your Dashboard</h2>
                     <p className="text-xl">Logged in as: {user.role.charAt(0).toUpperCase() + user.role.slice(1)}</p>
                     <p>Email: {user.email}</p>
-                    <p>This is a dummy dashboard. Add real features like crop listing or orders here.</p>
+                    <p className='p-10 text-3xl'>This is a dummy dashboard. Add real features like crop listing or orders here.</p>
+                    <p className='text-2xl'>(Backend is on Grind)</p>
                </section>
                <Footer />
           </div>

@@ -11,7 +11,7 @@ const Header = () => {
 
      const handleLogout = () => {
           localStorage.removeItem('user');
-          navigate('/');
+          navigate('/register-farmer');
      };
 
      return (
@@ -20,17 +20,20 @@ const Header = () => {
                <nav className="space-x-4 flex items-center">
                     {isLoggedIn ? (
                          <>
-                              <Link to="/dashboard" className="px-4 py-2">Dashboard</Link>
-                              <button onClick={handleLogout} className="bg-white text-green-600 px-4 py-2 rounded hover:bg-gray-100 dark:bg-gray-700 dark:text-white">Logout</button>
+                              <Link to="/" className="px-4 py-2 hover:bg-gray-700 rounded">Home</Link>
+                              <Link to="/dashboard" className="px-4 py-2 hover:bg-gray-700 rounded">Dashboard</Link>
+                              <Link to="/contact" className="px-4 hover:bg-gray-700 py-2 rounded">Contact</Link>
+                              <button onClick={handleLogout} className=" text-green-600 px-4 py-2 rounded hover:bg-gray-700 dark:bg-gray-800 dark:text-white cursor-pointer">Logout</button>
+
                          </>
                     ) : (
                          <>
-                              <Link to="/register-farmer" className="px-4 py-2">Register as Farmer</Link>
-                              <Link to="/register-company" className="px-4 py-2">Register as Company</Link>
-                              <button onClick={() => alert('Dummy Login: Use register pages for now.')} className="bg-white text-green-600 px-4 py-2 rounded hover:bg-gray-100 dark:bg-gray-700 dark:text-white">Login</button>
+                              <Link to="/register-farmer" className="px-4 py-2 hover:bg-gray-700 rounded">Login</Link>
+                              {/* <Link to="/register-company" className="px-4 py-2 hover:bg-gray-700 rounded">Register as Company</Link> */}
+                              {/* <button onClick={() => alert('Dummy Login: Use register pages for now.')} className=" text-green-600 px-4 py-2 rounded hover:bg-gray-700 dark:bg-gray-800 dark:text-white cursor-pointer">Login</button> */}
                          </>
                     )}
-                    <Link to="/contact" className="px-4 py-2">Contact</Link>
+
                     {/* Toggle Button */}
                     <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
                          {theme === 'dark' ? (
